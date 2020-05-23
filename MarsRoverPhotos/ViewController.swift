@@ -14,17 +14,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    dynamic var list: [Photos] = []
-    
-    let cellReuseIdentifier = "ImageTableViewCell"
+    var list: [Photos] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ImageTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.id) as! ImageTableViewCell
         cell.marsImage?.image = nil
         
         if let http = list[indexPath.row].img_src {
@@ -45,12 +42,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        <#code#>
+//        guard let ratio = ratioList[indexPath.row] else {
+//            print(0)
+//            return 0
+//        }
+//
+//        let height = tableView.frame.width / ratio
+//        print(height)
+//        return height
 //    }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.register(ImageTableViewCell.self, forCellReuseIdentifier: ImageTableViewCell.id)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 400
         
         fetchJSON()
     }
@@ -68,9 +79,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                print("reloaded")
                             }
                         }
-                        print("reloaded")
                     } catch {
                         print("JSON Serialization error")
                     }
@@ -78,4 +89,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 }
-

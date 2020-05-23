@@ -10,22 +10,17 @@ import Foundation
 import UIKit
 
 class ImageDetailViewController: UIViewController {
-//    @IBOutlet weak var scrollView: UIScrollView!
-//    @IBOutlet weak var imageView: UIImageView!
-//    
-////    var image: 
-//    
-//    override func viewDidLoad() {
-//
-//        super.viewDidLoad()
-//
-//        scrollView.minimumZoomScale = 1.0
-//        scrollView.maximumZoomScale = 6.0
-//        // scrollView.delegate = self - it is set on the storyboard.
-//    }
-//
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//
-////        return image
-//    }
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var image: UIImage!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        imageView.image = image
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 }

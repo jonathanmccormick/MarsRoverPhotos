@@ -40,4 +40,7 @@ struct PhotoModel : Codable {
 		rover = try values.decodeIfPresent(RoverModel.self, forKey: .rover)
 	}
 
+    func toDTO() -> PhotoDTO {
+        return PhotoDTO(id: id, sol: sol, camera: camera, img_src: img_src, earth_date: earth_date, rover: rover)
+    }
 }

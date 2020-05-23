@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    dynamic var list: [PhotoModel] = []
+    dynamic var list: [PhotoDTO] = []
     
     let cellReuseIdentifier = "ImageTableViewCell"
     
@@ -25,18 +25,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ImageTableViewCell
         
-        cell.marsImage?.image = nil
+//        cell.marsImage?.image = nil
         
-        if let http = list[indexPath.row].img_src {
-            // Convert to https
-            let https = "https" + http.dropFirst(4)
-            
-            AF.request(https).responseImage { response in
-                if case .success(let image) = response.result {
-                    print(https)
-                    cell.marsImage?.image = image
-                } else {
-                    print("error")
+        if (list[indexPath.row].image == nil) {
+            if let http = list[indexPath.row].img_src {
+                // Convert to https
+                let https = "https" + http.dropFirst(4)
+                
+                AF.request(https).responseImage { response in
+                    if case .success(let image) = response.result {
+                        self.list[indexPath.row].image = image
+                        cell.marsImage?.image = image
+                    } else {
+                        print("error")
+                    }
                 }
             }
         }
@@ -49,15 +51,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         EndpointManager.sharedInstance.getPhotos {
             photos in
-            self.list.append(contentsOf: photos)
+            self.list.append(contentsOf: photos.map{ $0.toDTO() })
             self.tableView.reloadData()
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToImageDetail" {
-            let vc = segue.destination as! ImageDetailViewController
-//            vc.sourceImage = Pho
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = storyboard?.instantiateViewController(identifier: "ImageDetailViewController") as! ImageDetailViewController
+        viewController.image = list[indexPath.row].image!
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

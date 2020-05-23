@@ -22,6 +22,7 @@
 		F92829DC24776F3C00A688EC /* RoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829D724776F3C00A688EC /* RoverModel.swift */; };
 		F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */; };
 		F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9402EAD2478AC4B0030385B /* EndpointManager.swift */; };
+		F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		F92829D724776F3C00A688EC /* RoverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverModel.swift; sourceTree = "<group>"; };
 		F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		F9402EAD2478AC4B0030385B /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
+		F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoverPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 		F92829DD24777DB800A688EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F9F43FBA2478D3DF00F1FCB1 /* DTOs */,
 				F9402EAC2478AC2C0030385B /* Models */,
 				F9402EAD2478AC4B0030385B /* EndpointManager.swift */,
 			);
@@ -145,6 +148,14 @@
 				F91A67862478CAF20023C002 /* ImageDetailViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F9F43FBA2478D3DF00F1FCB1 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */,
 				F92829D824776F3C00A688EC /* Cameras.swift in Sources */,
 				F92829C42477654900A688EC /* ViewController.swift in Sources */,
 				F91A67872478CAF20023C002 /* ImageDetailViewController.swift in Sources */,

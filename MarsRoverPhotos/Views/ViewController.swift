@@ -25,8 +25,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ImageTableViewCell
         
-//        cell.marsImage?.image = nil
-        
         if (list[indexPath.row].image == nil) {
             if let http = list[indexPath.row].img_src {
                 // Convert to https
@@ -45,6 +43,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let image = list[indexPath.row].image!
+//        let ratio = image.size.height / image.size.width
+//        
+//        return tableView.visibleSize.width / ratio
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +62,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let viewController = storyboard?.instantiateViewController(identifier: "ImageDetailViewController") as! ImageDetailViewController
         viewController.image = list[indexPath.row].image!
         navigationController?.pushViewController(viewController, animated: true)

@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EndpointManager.sharedInstance.fetchJSON {
+        EndpointManager.sharedInstance.getImages {
             photos in
             self.list.append(contentsOf: photos)
             self.tableView.reloadData()

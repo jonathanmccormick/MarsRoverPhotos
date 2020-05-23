@@ -11,7 +11,8 @@ import Foundation
 class EndpointManager {
     
     // MARK: Properties
-    let url = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=rZ0WQcn5EccakcXSymwZcgbdCw8URtiVGJYADFpq")!
+//    let url = URL(string: "/curiosity/photos?sol=1000&page=1&api_key=")!
+    let API_KEY = "rZ0WQcn5EccakcXSymwZcgbdCw8URtiVGJYADFpq"
     let GET_VERB = "GET"
     
     static let sharedInstance: EndpointManager = {
@@ -20,7 +21,12 @@ class EndpointManager {
         return instance
     }()
     
-    public func fetchJSON(completionHandler: @escaping (_ photos: [Photos]) -> ()) {
+    public func getImages(completionHandler: @escaping (_ photos: [Photos]) -> ()) {
+        let url = generateUrl(rover: "curiosity")
+        fetchJSON(url: url, completionHandler: completionHandler)
+    }
+    
+    private func fetchJSON(url: URL, completionHandler: @escaping (_ photos: [Photos]) -> ()) {
         let getRequest = makeGetRequest(with: url)
 
         URLSession.shared.dataTask(with: getRequest, completionHandler: { data, response, error -> Void in
@@ -36,6 +42,20 @@ class EndpointManager {
                 print("JSON Serialization error")
             }
         }).resume()
+    }
+    
+    private func generateUrl(rover: String) -> URL{
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.nasa.gov"
+        urlComponents.path = "/mars-photos/api/v1/rovers/\(rover)/photos"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "sol", value: "1000"),
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "api_key", value: API_KEY)
+        ]
+        
+        return urlComponents.url!
     }
     
     private func makeGetRequest(with url: URL) -> URLRequest {

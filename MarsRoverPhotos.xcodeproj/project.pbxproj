@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		F92829DB24776F3C00A688EC /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829D624776F3C00A688EC /* Photos.swift */; };
 		F92829DC24776F3C00A688EC /* Rover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829D724776F3C00A688EC /* Rover.swift */; };
 		F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */; };
+		F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9402EAD2478AC4B0030385B /* EndpointManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F92829D624776F3C00A688EC /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		F92829D724776F3C00A688EC /* Rover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rover.swift; sourceTree = "<group>"; };
 		F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		F9402EAD2478AC4B0030385B /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoverPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,7 +70,6 @@
 				4DA6DC293F1ED94D90FA1E0D /* Pods-MarsRoverPhotos.debug.xcconfig */,
 				D6E800F78BC8334E678A20DD /* Pods-MarsRoverPhotos.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,20 +94,26 @@
 		F92829BE2477654900A688EC /* MarsRoverPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				F9402EAF2478ADF20030385B /* Views */,
 				F92829DD24777DB800A688EC /* Data */,
 				F92829BF2477654900A688EC /* AppDelegate.swift */,
 				F92829C12477654900A688EC /* SceneDelegate.swift */,
-				F92829C32477654900A688EC /* ViewController.swift */,
-				F92829C52477654900A688EC /* Main.storyboard */,
 				F92829C82477654B00A688EC /* Assets.xcassets */,
-				F92829CA2477654B00A688EC /* LaunchScreen.storyboard */,
 				F92829CD2477654B00A688EC /* Info.plist */,
-				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
 			);
 			path = MarsRoverPhotos;
 			sourceTree = "<group>";
 		};
 		F92829DD24777DB800A688EC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F9402EAC2478AC2C0030385B /* Models */,
+				F9402EAD2478AC4B0030385B /* EndpointManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F9402EAC2478AC2C0030385B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F92829D524776F3C00A688EC /* Camera.swift */,
@@ -115,7 +122,18 @@
 				F92829D624776F3C00A688EC /* Photos.swift */,
 				F92829D724776F3C00A688EC /* Rover.swift */,
 			);
-			path = Data;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F9402EAF2478ADF20030385B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F92829C32477654900A688EC /* ViewController.swift */,
+				F92829C52477654900A688EC /* Main.storyboard */,
+				F92829CA2477654B00A688EC /* LaunchScreen.storyboard */,
+				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +255,7 @@
 				F92829C42477654900A688EC /* ViewController.swift in Sources */,
 				F92829DA24776F3C00A688EC /* Camera.swift in Sources */,
 				F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */,
+				F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */,
 				F92829C02477654900A688EC /* AppDelegate.swift in Sources */,
 				F92829DC24776F3C00A688EC /* Rover.swift in Sources */,
 				F92829D924776F3C00A688EC /* Json4Swift_Base.swift in Sources */,

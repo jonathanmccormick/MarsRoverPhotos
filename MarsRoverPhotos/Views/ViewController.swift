@@ -50,32 +50,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        fetchJSON()
+        EndpointManager.sharedInstance.fetchJSON {
+            photos in
+            self.list.append(contentsOf: photos)
+            self.tableView.reloadData()
+        }
     }
-    
-    private func fetchJSON() {
-        var request = URLRequest(url: URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=rZ0WQcn5EccakcXSymwZcgbdCw8URtiVGJYADFpq")!)
-                request.httpMethod = "GET"
-
-                URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                    do {
-                        let jsonDecoder = JSONDecoder()
-                        let responseModel = try jsonDecoder.decode(Json4Swift_Base.self, from: data!)
-                        if let photos = responseModel.photos {
-                            self.list.append(contentsOf: photos)
-                            
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                        }
-                        print("reloaded")
-                    } catch {
-                        print("JSON Serialization error")
-                    }
-                }).resume()
-    }
-
 }
-

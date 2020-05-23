@@ -15,50 +15,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yD-NP-qDb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mLg-a6-pYB">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="ImageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" id="zOs-zO-BaI" customClass="ImageTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" id="fmp-je-DCL" customClass="ImageTableViewCell" customModule="MarsRoverPhotos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zOs-zO-BaI" id="sSB-Ch-GGx">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fmp-je-DCL" id="Got-yb-q0e">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLz-iu-iSa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6C4-PV-nEU" userLabel="image">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="Wuy-0Z-Bkz"/>
+                                                        <constraint firstAttribute="height" constant="100" id="WYI-2A-3Le"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cLz-iu-iSa" firstAttribute="leading" secondItem="sSB-Ch-GGx" secondAttribute="leading" id="DFL-HC-gfh"/>
-                                                <constraint firstAttribute="trailing" secondItem="cLz-iu-iSa" secondAttribute="trailing" id="ZqG-Uv-KkJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="cLz-iu-iSa" secondAttribute="bottom" id="jVW-Z7-jLw"/>
-                                                <constraint firstItem="cLz-iu-iSa" firstAttribute="top" secondItem="sSB-Ch-GGx" secondAttribute="top" id="oJW-ul-HhI"/>
+                                                <constraint firstItem="6C4-PV-nEU" firstAttribute="top" secondItem="Got-yb-q0e" secondAttribute="top" id="KZu-2r-U0u"/>
+                                                <constraint firstItem="6C4-PV-nEU" firstAttribute="leading" secondItem="Got-yb-q0e" secondAttribute="leading" id="ODy-7Z-gvG"/>
+                                                <constraint firstAttribute="trailing" secondItem="6C4-PV-nEU" secondAttribute="trailing" id="eon-vB-HDj"/>
+                                                <constraint firstAttribute="bottom" secondItem="6C4-PV-nEU" secondAttribute="bottom" id="q82-LU-xvI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="marsImage" destination="6C4-PV-nEU" id="UMP-YN-SPS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uhx-He-uz8"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HGj-xZ-tv7"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZBI-oi-yMZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nAX-fe-yGl"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6yD-NP-qDb" secondAttribute="bottom" id="4VM-og-Xn4"/>
-                            <constraint firstItem="6yD-NP-qDb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6QE-pW-RBY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6yD-NP-qDb" secondAttribute="trailing" id="7Yo-ta-waA"/>
-                            <constraint firstItem="6yD-NP-qDb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qb2-Y4-REX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="6yD-NP-qDb" id="185-dG-7fX"/>
+                        <outlet property="tableView" destination="mLg-a6-pYB" id="GYf-DX-i34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

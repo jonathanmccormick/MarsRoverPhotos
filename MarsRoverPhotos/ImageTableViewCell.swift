@@ -10,10 +10,5 @@ import Foundation
 import UIKit
 
 class ImageTableViewCell: UITableViewCell {
-    
-    static let id = "ImageTableViewCell"
-    
     @IBOutlet weak var marsImage: UIImageView!
-    
-    public var height: CGFloat = 0
 }

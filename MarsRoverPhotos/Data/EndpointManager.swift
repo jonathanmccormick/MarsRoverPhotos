@@ -11,7 +11,6 @@ import Foundation
 class EndpointManager {
     
     // MARK: Properties
-//    let url = URL(string: "/curiosity/photos?sol=1000&page=1&api_key=")!
     let API_KEY = "rZ0WQcn5EccakcXSymwZcgbdCw8URtiVGJYADFpq"
     let GET_VERB = "GET"
     
@@ -22,7 +21,7 @@ class EndpointManager {
     }()
     
     public func getImages(completionHandler: @escaping (_ photos: [Photos]) -> ()) {
-        let url = generateUrl(rover: "curiosity")
+        let url = generateUrl(rover: "curiosity", sol: 2)
         fetchJSON(url: url, completionHandler: completionHandler)
     }
     
@@ -44,14 +43,14 @@ class EndpointManager {
         }).resume()
     }
     
-    private func generateUrl(rover: String) -> URL{
+    private func generateUrl(rover: String, sol: Int, page: Int? = nil) -> URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.nasa.gov"
         urlComponents.path = "/mars-photos/api/v1/rovers/\(rover)/photos"
         urlComponents.queryItems = [
-            URLQueryItem(name: "sol", value: "1000"),
-            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "sol", value: String(sol)),
+            URLQueryItem(name: "page", value: ""),
             URLQueryItem(name: "api_key", value: API_KEY)
         ]
         

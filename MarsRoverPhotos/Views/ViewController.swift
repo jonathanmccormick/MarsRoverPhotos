@@ -41,6 +41,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         
+        cell.marsImage?.image = list[indexPath.row].image
+        
         return cell
     }
     

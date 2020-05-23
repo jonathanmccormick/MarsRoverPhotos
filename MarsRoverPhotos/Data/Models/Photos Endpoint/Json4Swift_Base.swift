@@ -12,20 +12,17 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Cameras : Codable {
-	let name : String?
-	let full_name : String?
+struct Json4Swift_Base : Codable {
+	let photos : [PhotoModel]?
 
 	enum CodingKeys: String, CodingKey {
 
-		case name = "name"
-		case full_name = "full_name"
+		case photos = "photos"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		name = try values.decodeIfPresent(String.self, forKey: .name)
-		full_name = try values.decodeIfPresent(String.self, forKey: .full_name)
+		photos = try values.decodeIfPresent([PhotoModel].self, forKey: .photos)
 	}
 
 }

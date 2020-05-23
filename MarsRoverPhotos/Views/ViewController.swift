@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    dynamic var list: [Photos] = []
+    dynamic var list: [PhotoModel] = []
     
     let cellReuseIdentifier = "ImageTableViewCell"
     
@@ -43,18 +43,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        <#code#>
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EndpointManager.sharedInstance.getImages {
+        EndpointManager.sharedInstance.getPhotos {
             photos in
             self.list.append(contentsOf: photos)
             self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToImageDetail" {
+            let vc = segue.destination as! ImageDetailViewController
+//            vc.sourceImage = Pho
         }
     }
 }

@@ -12,32 +12,20 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Photos : Codable {
-	let id : Int?
-	let sol : Int?
-	let camera : Camera?
-	let img_src : String?
-	let earth_date : String?
-	let rover : Rover?
+struct Cameras : Codable {
+	let name : String?
+	let full_name : String?
 
 	enum CodingKeys: String, CodingKey {
 
-		case id = "id"
-		case sol = "sol"
-		case camera = "camera"
-		case img_src = "img_src"
-		case earth_date = "earth_date"
-		case rover = "rover"
+		case name = "name"
+		case full_name = "full_name"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		id = try values.decodeIfPresent(Int.self, forKey: .id)
-		sol = try values.decodeIfPresent(Int.self, forKey: .sol)
-		camera = try values.decodeIfPresent(Camera.self, forKey: .camera)
-		img_src = try values.decodeIfPresent(String.self, forKey: .img_src)
-		earth_date = try values.decodeIfPresent(String.self, forKey: .earth_date)
-		rover = try values.decodeIfPresent(Rover.self, forKey: .rover)
+		name = try values.decodeIfPresent(String.self, forKey: .name)
+		full_name = try values.decodeIfPresent(String.self, forKey: .full_name)
 	}
 
 }

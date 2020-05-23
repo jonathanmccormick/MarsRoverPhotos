@@ -20,12 +20,12 @@ class EndpointManager {
         return instance
     }()
     
-    public func getImages(completionHandler: @escaping (_ photos: [Photos]) -> ()) {
+    public func getPhotos(completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
         let url = generateUrl(rover: "curiosity", sol: 2)
         fetchJSON(url: url, completionHandler: completionHandler)
     }
     
-    private func fetchJSON(url: URL, completionHandler: @escaping (_ photos: [Photos]) -> ()) {
+    private func fetchJSON(url: URL, completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
         let getRequest = makeGetRequest(with: url)
 
         URLSession.shared.dataTask(with: getRequest, completionHandler: { data, response, error -> Void in

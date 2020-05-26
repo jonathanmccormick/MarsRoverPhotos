@@ -74,20 +74,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-WS-wAf">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACu-L3-YiB" customClass="ImageScrollView" customModule="ImageScrollView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8wo-NU-zfJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="EDC-dx-es4"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vUs-WS-wAf" firstAttribute="centerY" secondItem="AjG-aD-GsF" secondAttribute="centerY" id="Kw6-AD-d6M"/>
-                            <constraint firstItem="vUs-WS-wAf" firstAttribute="centerX" secondItem="AjG-aD-GsF" secondAttribute="centerX" id="ev7-p1-M3E"/>
+                            <constraint firstItem="ACu-L3-YiB" firstAttribute="bottom" secondItem="xsw-Cb-e0v" secondAttribute="bottom" id="44L-fI-VzX"/>
+                            <constraint firstItem="ACu-L3-YiB" firstAttribute="leading" secondItem="xsw-Cb-e0v" secondAttribute="leading" id="CXQ-fB-jdn"/>
+                            <constraint firstItem="ACu-L3-YiB" firstAttribute="top" secondItem="xsw-Cb-e0v" secondAttribute="top" id="HPW-WF-bub"/>
+                            <constraint firstItem="ACu-L3-YiB" firstAttribute="trailing" secondItem="xsw-Cb-e0v" secondAttribute="trailing" id="aoS-xY-Hww"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xsw-Cb-e0v"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mce-bC-Eb6"/>
                     <connections>
-                        <outlet property="imageView" destination="vUs-WS-wAf" id="yu7-Qx-ZrA"/>
+                        <outlet property="imageScrollView" destination="ACu-L3-YiB" id="SnU-Pe-zuC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfQ-Wq-IKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

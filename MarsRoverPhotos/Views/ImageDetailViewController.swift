@@ -8,19 +8,17 @@
 
 import Foundation
 import UIKit
+import ImageScrollView
 
 class ImageDetailViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageScrollView: ImageScrollView!
     
     var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageView.image = image
-    }
-
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        
+        imageScrollView.setup()
+        imageScrollView.display(image: image)
     }
 }

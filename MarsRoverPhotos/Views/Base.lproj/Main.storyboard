@@ -34,17 +34,34 @@
                                                         <constraint firstAttribute="height" constant="200" id="WYI-2A-3Le"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Camera Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttv-qo-ODk" userLabel="Camera name">
+                                                    <rect key="frame" x="20" y="175" width="136" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sol (date)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vn-dq-8Tb" userLabel="sol">
+                                                    <rect key="frame" x="232" y="175" width="162" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6C4-PV-nEU" firstAttribute="top" secondItem="Got-yb-q0e" secondAttribute="top" id="KZu-2r-U0u"/>
                                                 <constraint firstItem="6C4-PV-nEU" firstAttribute="leading" secondItem="Got-yb-q0e" secondAttribute="leading" id="ODy-7Z-gvG"/>
                                                 <constraint firstAttribute="trailing" secondItem="6C4-PV-nEU" secondAttribute="trailing" id="eon-vB-HDj"/>
                                                 <constraint firstAttribute="bottom" secondItem="6C4-PV-nEU" secondAttribute="bottom" id="q82-LU-xvI"/>
+                                                <constraint firstItem="ttv-qo-ODk" firstAttribute="leading" secondItem="Got-yb-q0e" secondAttribute="leadingMargin" id="tdE-JE-UDw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ttv-qo-ODk" secondAttribute="bottom" id="wUw-9h-N3S"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="cameraNameLabel" destination="ttv-qo-ODk" id="ZlE-ge-0YX"/>
                                             <outlet property="marsImage" destination="6C4-PV-nEU" id="UMP-YN-SPS"/>
+                                            <outlet property="sol" destination="1vn-dq-8Tb" id="7ay-QC-LlL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

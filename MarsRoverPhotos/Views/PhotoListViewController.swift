@@ -19,6 +19,8 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = rover.name
+        
         EndpointManager.sharedInstance.getPhotos(rover: rover) {
             photos in
             self.list.append(contentsOf: photos.map{ $0.toDTO() })
@@ -52,6 +54,8 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.marsImage?.image = list[indexPath.row].image
+            cell.cameraNameLabel.text = list[indexPath.row].camera?.full_name
+            cell.sol.text = "Sol \(list[indexPath.row].sol!) (\(list[indexPath.row].earth_date!))"
             
             return cell
         }

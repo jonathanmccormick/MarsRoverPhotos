@@ -14,4 +14,6 @@ class ImageTableViewCell: UITableViewCell {
     static let id = "ImageTableViewCell"
     
     @IBOutlet weak var marsImage: UIImageView!
+    @IBOutlet weak var cameraNameLabel: UILabel!
+    @IBOutlet weak var sol: UILabel!
 }

@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="i8S-PR-Zco" id="GwL-1w-EXl"/>
+                                    <outlet property="dataSource" destination="i8S-PR-Zco" id="2Du-aq-7bW"/>
                                     <outlet property="delegate" destination="i8S-PR-Zco" id="xZF-mC-dCD"/>
                                 </connections>
                             </tableView>

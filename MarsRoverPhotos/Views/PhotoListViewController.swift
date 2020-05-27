@@ -15,7 +15,10 @@ class PhotoListViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     public var rover: RoverModel!
+    public static let id = "PhotoListViewController"
     private var photos: [PhotoDTO] = []
+    private var currentPage = 1
+    private var loadingData = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +29,20 @@ class PhotoListViewController: UIViewController {
         
         let nib = UINib(nibName: "ImageTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ImageTableViewCell")
+        loadData()
+    }
+    
+    private func loadData() {
         
-        EndpointManager.sharedInstance.getPhotos(rover: rover) {
+        print(currentPage)
+        EndpointManager.sharedInstance.getPhotos(rover: rover, page: currentPage) {
             photos in
             self.photos.append(contentsOf: photos.map{ $0.toDTO() })
             self.tableView.reloadData()
             self.tableView.isHidden = false
             self.activityIndicator.isHidden = true
+            self.currentPage += 1
+            self.loadingData = false
         }
     }
 }
@@ -85,4 +95,13 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
         viewController.image = photos[indexPath.row].image!
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let lastElement = photos.count - 1
+//        if !loadingData && indexPath.row == lastElement {
+////            indicator.startAnimating()
+////            loadMoreData()
+//            loadData()
+//        }
+//    }
 }

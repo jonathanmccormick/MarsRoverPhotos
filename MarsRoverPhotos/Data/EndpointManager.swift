@@ -39,8 +39,8 @@ class EndpointManager {
         }).resume()
     }
     
-    public func getPhotos(rover: RoverModel, completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
-        let url = generateUrl(rover: rover.name!, sol: 1)
+    public func getPhotos(rover: RoverModel, page: Int, completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
+        let url = generateUrl(rover: rover.name!, sol: 1, page: page)
         fetchJSON(url: url, completionHandler: completionHandler)
     }
     
@@ -62,14 +62,14 @@ class EndpointManager {
         }).resume()
     }
     
-    private func generateUrl(rover: String, sol: Int, page: Int? = nil) -> URL{
+    private func generateUrl(rover: String, sol: Int, page: Int) -> URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.nasa.gov"
         urlComponents.path = "/mars-photos/api/v1/rovers/\(rover)/photos"
         urlComponents.queryItems = [
             URLQueryItem(name: "sol", value: String(sol)),
-            URLQueryItem(name: "page", value: ""),
+            URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "api_key", value: API_KEY)
         ]
         

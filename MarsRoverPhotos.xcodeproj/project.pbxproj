@@ -148,13 +148,13 @@
 		F9402EAF2478ADF20030385B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F92829C32477654900A688EC /* PhotoListViewController.swift */,
 				F92829C52477654900A688EC /* Main.storyboard */,
-				F92829CA2477654B00A688EC /* LaunchScreen.storyboard */,
-				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
-				F91A67862478CAF20023C002 /* ImageDetailViewController.swift */,
 				F91AC3FE247DDD1B00946795 /* RoverPickerViewController.swift */,
+				F92829C32477654900A688EC /* PhotoListViewController.swift */,
+				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
 				F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */,
+				F91A67862478CAF20023C002 /* ImageDetailViewController.swift */,
+				F92829CA2477654B00A688EC /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";

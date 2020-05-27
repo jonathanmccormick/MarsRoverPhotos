@@ -11,10 +11,14 @@ import UIKit
 import ImageScrollView
 
 class ImageDetailViewController: UIViewController {
+    
+    // MARK: Outlets
     @IBOutlet weak var imageScrollView: ImageScrollView!
     
-    var image: UIImage!
+    // MARK: public properties
+    public var image: UIImage!
     
+    // MARK: Lifecycle Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         

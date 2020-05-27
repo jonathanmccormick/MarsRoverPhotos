@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MW9-gK-0Cm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i8S-PR-Zco">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photo List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarsRoverPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotoListViewController" customModule="MarsRoverPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75b-Zd-Zu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
+        </scene>
+        <!--Rover Picker View Controller-->
+        <scene sceneID="q9Q-oF-35c">
+            <objects>
+                <viewController id="i8S-PR-Zco" customClass="RoverPickerViewController" customModule="MarsRoverPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V84-cE-Rhh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZlF-9V-f1X">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i8S-PR-Zco" id="GwL-1w-EXl"/>
+                                    <outlet property="delegate" destination="i8S-PR-Zco" id="xZF-mC-dCD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZlF-9V-f1X" firstAttribute="top" secondItem="Zm7-lD-WJM" secondAttribute="top" id="9A5-31-Tg0"/>
+                            <constraint firstItem="ZlF-9V-f1X" firstAttribute="trailing" secondItem="Zm7-lD-WJM" secondAttribute="trailing" id="CRk-zq-NvX"/>
+                            <constraint firstItem="ZlF-9V-f1X" firstAttribute="leading" secondItem="Zm7-lD-WJM" secondAttribute="leading" id="fos-Fa-X1v"/>
+                            <constraint firstItem="ZlF-9V-f1X" firstAttribute="bottom" secondItem="Zm7-lD-WJM" secondAttribute="bottom" id="qbw-H3-dA6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zm7-lD-WJM"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ZlF-9V-f1X" id="bWb-Ej-gvG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bd-cq-0gG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="-565.17857142857144"/>
         </scene>
     </scenes>
 </document>

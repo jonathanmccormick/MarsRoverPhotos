@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		5E4D205DDF9168C7097F56C7 /* Pods_MarsRoverPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */; };
 		F91A67872478CAF20023C002 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91A67862478CAF20023C002 /* ImageDetailViewController.swift */; };
+		F91AC3FF247DDD1B00946795 /* RoverPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91AC3FE247DDD1B00946795 /* RoverPickerViewController.swift */; };
 		F92829C02477654900A688EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829BF2477654900A688EC /* AppDelegate.swift */; };
 		F92829C22477654900A688EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829C12477654900A688EC /* SceneDelegate.swift */; };
-		F92829C42477654900A688EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829C32477654900A688EC /* ViewController.swift */; };
+		F92829C42477654900A688EC /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829C32477654900A688EC /* PhotoListViewController.swift */; };
 		F92829C72477654900A688EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92829C52477654900A688EC /* Main.storyboard */; };
 		F92829C92477654B00A688EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F92829C82477654B00A688EC /* Assets.xcassets */; };
 		F92829CC2477654B00A688EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92829CA2477654B00A688EC /* LaunchScreen.storyboard */; };
@@ -23,16 +24,18 @@
 		F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */; };
 		F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9402EAD2478AC4B0030385B /* EndpointManager.swift */; };
 		F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */; };
+		F9FFBDE5247DEC0F006A1A31 /* RoverListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DA6DC293F1ED94D90FA1E0D /* Pods-MarsRoverPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoverPhotos.debug.xcconfig"; path = "Target Support Files/Pods-MarsRoverPhotos/Pods-MarsRoverPhotos.debug.xcconfig"; sourceTree = "<group>"; };
 		D6E800F78BC8334E678A20DD /* Pods-MarsRoverPhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsRoverPhotos.release.xcconfig"; path = "Target Support Files/Pods-MarsRoverPhotos/Pods-MarsRoverPhotos.release.xcconfig"; sourceTree = "<group>"; };
 		F91A67862478CAF20023C002 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		F91AC3FE247DDD1B00946795 /* RoverPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPickerViewController.swift; sourceTree = "<group>"; };
 		F92829BC2477654900A688EC /* MarsRoverPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsRoverPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92829BF2477654900A688EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F92829C12477654900A688EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F92829C32477654900A688EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F92829C32477654900A688EC /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		F92829C62477654900A688EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F92829C82477654B00A688EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F92829CB2477654B00A688EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		F9402EAD2478AC4B0030385B /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverListResponseModel.swift; sourceTree = "<group>"; };
 		FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoverPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,7 @@
 		F9402EAC2478AC2C0030385B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */,
 				F91A67882478D22F0023C002 /* Photos Endpoint */,
 			);
 			path = Models;
@@ -141,11 +146,12 @@
 		F9402EAF2478ADF20030385B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F92829C32477654900A688EC /* ViewController.swift */,
+				F92829C32477654900A688EC /* PhotoListViewController.swift */,
 				F92829C52477654900A688EC /* Main.storyboard */,
 				F92829CA2477654B00A688EC /* LaunchScreen.storyboard */,
 				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
 				F91A67862478CAF20023C002 /* ImageDetailViewController.swift */,
+				F91AC3FE247DDD1B00946795 /* RoverPickerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,7 +281,7 @@
 			files = (
 				F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */,
 				F92829D824776F3C00A688EC /* Cameras.swift in Sources */,
-				F92829C42477654900A688EC /* ViewController.swift in Sources */,
+				F92829C42477654900A688EC /* PhotoListViewController.swift in Sources */,
 				F91A67872478CAF20023C002 /* ImageDetailViewController.swift in Sources */,
 				F92829DA24776F3C00A688EC /* Camera.swift in Sources */,
 				F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */,
@@ -284,7 +290,9 @@
 				F92829DC24776F3C00A688EC /* RoverModel.swift in Sources */,
 				F92829D924776F3C00A688EC /* Json4Swift_Base.swift in Sources */,
 				F92829C22477654900A688EC /* SceneDelegate.swift in Sources */,
+				F91AC3FF247DDD1B00946795 /* RoverPickerViewController.swift in Sources */,
 				F92829DB24776F3C00A688EC /* PhotoModel.swift in Sources */,
+				F9FFBDE5247DEC0F006A1A31 /* RoverListResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

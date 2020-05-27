@@ -20,8 +20,27 @@ class EndpointManager {
         return instance
     }()
     
+    public func getRovers(completionHandler: @escaping (_ photos: [RoverModel]) -> ()) {
+        let url = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers?api_key=\(API_KEY)")!
+        let getRequest = makeGetRequest(with: url)
+
+        URLSession.shared.dataTask(with: getRequest, completionHandler: { data, response, error -> Void in
+            do {
+                let jsonDecoder = JSONDecoder()
+                let responseModel = try jsonDecoder.decode(RoverListResponseModel.self, from: data!)
+                if let rovers = responseModel.rovers {
+                    DispatchQueue.main.async {
+                        completionHandler(rovers)
+                    }
+                }
+            } catch {
+                print("JSON Serialization error : \(error)")
+            }
+        }).resume()
+    }
+    
     public func getPhotos(completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
-        let url = generateUrl(rover: "curiosity", sol: 2)
+        let url = generateUrl(rover: "curiosity", sol: 1)
         fetchJSON(url: url, completionHandler: completionHandler)
     }
     

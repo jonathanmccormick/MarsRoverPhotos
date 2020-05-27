@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PhotoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     

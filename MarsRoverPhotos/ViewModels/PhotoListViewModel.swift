@@ -11,9 +11,9 @@ import Foundation
 class PhotoListViewModel {
     // MARK: Public rover property
     public var rover: RoverModel!
+    public var photos: [PhotoDTO] = []
     
     // MARK: Private data
-    public var photos: [PhotoDTO] = []
     private var currentPage = 1
     private var loadingData = false
     

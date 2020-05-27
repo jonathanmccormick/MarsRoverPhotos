@@ -16,14 +16,12 @@ class PhotoListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     dynamic var list: [PhotoDTO] = []
     
-    let cellReuseIdentifier = "ImageTableViewCell"
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ImageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.id) as! ImageTableViewCell
         
         if (list[indexPath.row].image == nil) {
             if let http = list[indexPath.row].img_src {

@@ -24,6 +24,9 @@ class PhotoListViewController: UIViewController {
         tableView.isHidden = true
         activityIndicator.isHidden = false
         
+        let nib = UINib(nibName: "ImageTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "ImageTableViewCell")
+        
         EndpointManager.sharedInstance.getPhotos(rover: rover) {
             photos in
             self.photos.append(contentsOf: photos.map{ $0.toDTO() })

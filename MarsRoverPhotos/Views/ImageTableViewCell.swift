@@ -16,4 +16,8 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var marsImage: UIImageView!
     @IBOutlet weak var cameraNameLabel: UILabel!
     @IBOutlet weak var sol: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

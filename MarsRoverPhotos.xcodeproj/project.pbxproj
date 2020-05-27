@@ -25,6 +25,7 @@
 		F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9402EAD2478AC4B0030385B /* EndpointManager.swift */; };
 		F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */; };
 		F9FFBDE5247DEC0F006A1A31 /* RoverListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */; };
+		F9FFBDE7247DFAE9006A1A31 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		F9402EAD2478AC4B0030385B /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverListResponseModel.swift; sourceTree = "<group>"; };
+		F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
 		FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoverPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				F92829DE24777FFA00A688EC /* ImageTableViewCell.swift */,
 				F91A67862478CAF20023C002 /* ImageDetailViewController.swift */,
 				F91AC3FE247DDD1B00946795 /* RoverPickerViewController.swift */,
+				F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F92829CC2477654B00A688EC /* LaunchScreen.storyboard in Resources */,
+				F9FFBDE7247DFAE9006A1A31 /* ImageTableViewCell.xib in Resources */,
 				F92829C92477654B00A688EC /* Assets.xcassets in Resources */,
 				F92829C72477654900A688EC /* Main.storyboard in Resources */,
 			);

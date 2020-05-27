@@ -26,6 +26,7 @@
 		F9F43FBC2478D3F600F1FCB1 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */; };
 		F9FFBDE5247DEC0F006A1A31 /* RoverListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */; };
 		F9FFBDE7247DFAE9006A1A31 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */; };
+		F9FFBDF1247E946E006A1A31 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FFBDF0247E946E006A1A31 /* PhotoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		F9FFBDE4247DEC0F006A1A31 /* RoverListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoverListResponseModel.swift; sourceTree = "<group>"; };
 		F9FFBDE6247DFAE9006A1A31 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		F9FFBDF0247E946E006A1A31 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		FD7A5AA82570BA13090C08B4 /* Pods_MarsRoverPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsRoverPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 		F92829BE2477654900A688EC /* MarsRoverPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				F9FFBDEF247E9456006A1A31 /* ViewModels */,
 				F9402EAF2478ADF20030385B /* Views */,
 				F92829DD24777DB800A688EC /* Data */,
 				F92829BF2477654900A688EC /* AppDelegate.swift */,
@@ -165,6 +168,14 @@
 				F9F43FBB2478D3F600F1FCB1 /* PhotoDTO.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F9FFBDEF247E9456006A1A31 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F9FFBDF0247E946E006A1A31 /* PhotoListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				F92829C42477654900A688EC /* PhotoListViewController.swift in Sources */,
 				F91A67872478CAF20023C002 /* ImageDetailViewController.swift in Sources */,
 				F92829DA24776F3C00A688EC /* Camera.swift in Sources */,
+				F9FFBDF1247E946E006A1A31 /* PhotoListViewModel.swift in Sources */,
 				F92829DF24777FFA00A688EC /* ImageTableViewCell.swift in Sources */,
 				F9402EAE2478AC4B0030385B /* EndpointManager.swift in Sources */,
 				F92829C02477654900A688EC /* AppDelegate.swift in Sources */,

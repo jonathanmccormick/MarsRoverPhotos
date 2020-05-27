@@ -18,20 +18,19 @@ class PhotoListViewController: UIViewController {
     
     // MARK: Public ID
     public static let id = "PhotoListViewController"
-
+    
     // MARK: Public rover property
     public var rover: RoverModel!
     
-    // MARK: Private data
-    private var photos: [PhotoDTO] = []
-    private var currentPage = 1
-    private var loadingData = false
+    private var viewmodel: PhotoListViewModel!
     
     // MARK: Lifecycle overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = rover.name
+        viewmodel = PhotoListViewModel(rover: rover)
+        
+        title = viewmodel.rover.name
         showLoadingIndicator()
         registerNibForTableViewCell()
         loadData()
@@ -54,34 +53,29 @@ class PhotoListViewController: UIViewController {
     }
     
     private func loadData() {
-        print(currentPage)
-        EndpointManager.sharedInstance.getPhotos(rover: rover, page: currentPage) {
-            photos in
-            self.photos.append(contentsOf: photos.map{ $0.toDTO() })
+        viewmodel.loadPhotos() {
             self.tableView.reloadData()
             self.hideLoadingIndicator()
-            self.currentPage += 1
-            self.loadingData = false
         }
     }
 }
 
 extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
+        return viewmodel.photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.id) as! ImageTableViewCell
         
-        if (photos[indexPath.row].image == nil) {
-            if let http = photos[indexPath.row].img_src {
+        if (viewmodel.photos[indexPath.row].image == nil) {
+            if let http = viewmodel.photos[indexPath.row].img_src {
                 // Convert to https
                 let https = "https" + http.dropFirst(4)
                 
                 AF.request(https).responseImage { response in
                     if case .success(let image) = response.result {
-                        self.photos[indexPath.row].image = image
+                        self.viewmodel.photos[indexPath.row].image = image
                         cell.marsImage?.image = image
                         self.tableView.reloadData()
                     } else {
@@ -91,15 +85,15 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        cell.marsImage?.image = photos[indexPath.row].image
-        cell.cameraNameLabel.text = photos[indexPath.row].camera?.full_name
-        cell.sol.text = "Sol \(photos[indexPath.row].sol!) (\(photos[indexPath.row].earth_date!))"
+        cell.marsImage?.image = viewmodel.photos[indexPath.row].image
+        cell.cameraNameLabel.text = viewmodel.photos[indexPath.row].camera?.full_name
+        cell.sol.text = "Sol \(viewmodel.photos[indexPath.row].sol!) (\(viewmodel.photos[indexPath.row].earth_date!))"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let image = photos[indexPath.row].image {
+        if let image = viewmodel.photos[indexPath.row].image {
             let ratio = image.size.height / image.size.width
             return tableView.visibleSize.width / ratio
         } else {
@@ -111,7 +105,7 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let viewController = storyboard?.instantiateViewController(identifier: "ImageDetailViewController") as! ImageDetailViewController
-        viewController.image = photos[indexPath.row].image!
+        viewController.image = viewmodel.photos[indexPath.row].image!
         navigationController?.pushViewController(viewController, animated: true)
     }
     

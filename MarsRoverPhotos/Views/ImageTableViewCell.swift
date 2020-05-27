@@ -11,12 +11,15 @@ import UIKit
 
 class ImageTableViewCell: UITableViewCell {
     
-    static let id = "ImageTableViewCell"
+    // MARK: Public identifier
+    public static let id = "ImageTableViewCell"
     
+    // MARK: Outlets
     @IBOutlet weak var marsImage: UIImageView!
     @IBOutlet weak var cameraNameLabel: UILabel!
     @IBOutlet weak var sol: UILabel!
     
+    // MARK: Lifecycle Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
     }

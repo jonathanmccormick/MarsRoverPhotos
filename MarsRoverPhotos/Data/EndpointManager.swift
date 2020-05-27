@@ -39,8 +39,8 @@ class EndpointManager {
         }).resume()
     }
     
-    public func getPhotos(completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
-        let url = generateUrl(rover: "curiosity", sol: 1)
+    public func getPhotos(rover: RoverModel, completionHandler: @escaping (_ photos: [PhotoModel]) -> ()) {
+        let url = generateUrl(rover: rover.name!, sol: 1)
         fetchJSON(url: url, completionHandler: completionHandler)
     }
     

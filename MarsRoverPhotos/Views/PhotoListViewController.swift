@@ -13,12 +13,13 @@ import AlamofireImage
 class PhotoListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    dynamic var list: [PhotoDTO] = []
-
+    public var rover: RoverModel!
+    private var list: [PhotoDTO] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EndpointManager.sharedInstance.getPhotos {
+        EndpointManager.sharedInstance.getPhotos(rover: rover) {
             photos in
             self.list.append(contentsOf: photos.map{ $0.toDTO() })
             self.tableView.reloadData()
